@@ -143,11 +143,15 @@ class I18N_Arabic_Glyphs
 
         // Support the extra 4 Persian letters (p), (ch), (zh) and (g)
         // This needs value in getGlyphs function to be 52 instead of 48
+        $this->_glyphs .= "پچژگی";
         // $this->_glyphs .= chr(129).chr(141).chr(142).chr(144);
-        // $this->_hex    .= 'FB56FB57FB58FB59FB7AFB7BFB7CFB7DFB8AFB8BFB8AFB8BFB92';
-        // $this->_hex    .= 'FB93FB94FB95';
-        //
+        $this->_hex    .= 'FB56FB57FB58FB59FB7AFB7BFB7CFB7DFB8AFB8BFB8AFB8BFB92';
+        $this->_hex    .= 'FB93FB94FB95';
+        $this->_hex    .= 'FBFCFBFDFBFEFBFF';
+        
+        $this->_prevLink .= "پچژگ";
         // $this->_prevLink .= chr(129).chr(141).chr(142).chr(144);
+        $this->_nextLink .= "پچژگ";
         // $this->_nextLink .= chr(129).chr(141).chr(142).chr(144);
         //
         // Example:     $text = 'نمونة قلم: لاگچ ژافپ';
@@ -174,8 +178,8 @@ class I18N_Arabic_Glyphs
 
         $pos = mb_strpos($this->_glyphs, $char);
         
-        if ($pos > 49) {
-            $pos = ($pos-49)/2 + 49;
+        if ($pos > 53) {
+            $pos = ($pos-53)/2 + 53;
         }
         
         $pos = $pos*16 + $type*4;
